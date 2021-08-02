@@ -17,18 +17,35 @@ El valor y forma de estas curvas viene determinado por una serie de factores div
 
 ## Construcción del Dataset
 
-Toda esta información mencionada anteriormente se puede descargar casi toda de manera pública desde la plataforma de Red Eléctrica de España (https://www.esios.ree.es/es) y desde cualquier plataforma de inversión con los históricos del gas y derechos de emisión del CO2 (https://www.investing.com/).
+Toda esta información mencionada anteriormente se puede descargar de manera pública desde la plataforma de Red Eléctrica de España (https://www.esios.ree.es/es) y desde cualquier plataforma de inversión con los históricos del gas y derechos de emisión del CO2 (https://www.investing.com/).
 
 Por lo tanto las 18 variables que constituyen el dataset son, la generación por fuente de energía, los derechos de emisión del CO2, la demanda, el precio del gas, el saldo en la conexiones internacionales y el precio spot en el mercado español:
 
 Hidráulica, Eólica, Solar Fotovoltaica, Solar Térmica,Otras Renovables, Residuos Renovables, Nuclear, Turbinación bombeo, Ciclo combinado, Carbón, Fuel-gas, Cogeneración, Residuos no renovables, EUA SPOT, Demanda real, TTF GAS, Saldo Interconexiones, Price
 
-El dataset abarcara toda esta información de manera horario desde el año 2015 al 2020.
+Todas estás variables afectan sobre el precio de la electricidad y por lo tanto tienen poder predictivo sobre ella.
+
+El dataset abarcará de manera horaria desde el año 2015 al 2020.
+
+Este dataset se dividirá en 3 partes: un dataset de entrenamiento con el 70% de los datos, un dataset de validación con el 10% de los datos y un dataset de testeo con el  10% restante.
 
 ## Descripción del Proyecto
 
-Mediante el analisis exploratorio de datos se eliman cualquier tipo de outlier detectado 
+Durante el analisis exploratorio de datos se han detectado algunos outliers que se han eliminado y algunas variables con poco poder predtictivo, que han sido descartadas. 
 
-## Recurrent-Neural-Networks-for-Electricity-Price-Prediction
+El escalado de los datos se ha realizado mediante el método MinMaxScaler() de la libreria sklearn. El entrenamiento del escalado se ha realizado únicamente sobre los datos de entrenamiento pero la transformación se ha aplicado sobre los 3 datasets: el de entrenamiento, el de validación y el de testeo.
 
-## Recurrent-Neural-Networks-for-Electricity-Price-Prediction
+Al ser un analisis de series temporales para mayor simplicidad a la hora de trabajar con los distintos modelos, se ha utilizado una clase que se encarga de crear las ventanas de secuencias con el tamaño indicado. En este caso la ventana cuenta con un input de 168 y un label de 24, con un offset de 24, es decir se introducen secuencias de 7 días para predecir el octavo.
+
+Todo el proyecto se ha realizado mediante Google Colab gracias su simplicidad de maneja y la posibilidad de utilizar GPUs para el entrenamiento de los modelos.
+
+Los modelos testeados han sido basicamente los 5 siguientes:
+
+-Multi Step Dense
+-Single Step Convolutional 
+-Single Step Recurrent
+-Multi Step Convolutional
+-Multi Step Recurrent
+-Encoder Decoder LSTM
+
+La métrica utilizada para su evaluación ha sido el Mean Absolute Error
