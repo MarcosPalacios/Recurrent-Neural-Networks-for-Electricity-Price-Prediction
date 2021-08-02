@@ -35,17 +35,17 @@ Durante el analisis exploratorio de datos se han detectado algunos outliers que 
 
 El escalado de los datos se ha realizado mediante el método MinMaxScaler() de la libreria sklearn. El entrenamiento del escalado se ha realizado únicamente sobre los datos de entrenamiento pero la transformación se ha aplicado sobre los 3 datasets: el de entrenamiento, el de validación y el de testeo.
 
-Al ser un analisis de series temporales para mayor simplicidad a la hora de trabajar con los distintos modelos, se ha utilizado una clase que se encarga de crear las ventanas de secuencias con el tamaño indicado. En este caso la ventana cuenta con un input de 168 y un label de 24, con un offset de 24, es decir se introducen secuencias de 7 días para predecir el octavo.
+Al ser un analisis de series temporales para mayor simplicidad a la hora de trabajar con los distintos modelos, se ha utilizado una clase que se encarga de crear las ventanas de secuencias con el tamaño indicado. En este caso la ventana cuenta con un input de 168 y un label de 24, con un offset de 24, es decir se introducen secuencias de 7 días para predecir el día siguiente.
 
 Todo el proyecto se ha realizado mediante Google Colab gracias su simplicidad de maneja y la posibilidad de utilizar GPUs para el entrenamiento de los modelos.
 
 Los modelos testeados han sido basicamente los 5 siguientes:
 
--Multi Step Dense
--Single Step Convolutional 
--Single Step Recurrent
--Multi Step Convolutional
--Multi Step Recurrent
--Encoder Decoder LSTM
+* Multi Step Dense
+* Single Step Convolutional 
+* Single Step Recurrent
+* Multi Step Convolutional
+* Multi Step Recurrent
+* Encoder Decoder LSTM
 
 La métrica utilizada para su evaluación ha sido el Mean Absolute Error
