@@ -27,7 +27,7 @@ Todas estás variables afectan sobre el precio de la electricidad y por lo tanto
 
 El dataset abarcará de manera horaria desde el año 2015 al 2020.
 
-Este dataset se dividirá en 3 partes: un dataset de entrenamiento con el 70% de los datos, un dataset de validación con el 10% de los datos y un dataset de testeo con el  10% restante.
+Este dataset se dividirá en 3 partes: un dataset de entrenamiento con el 70% de los datos, un dataset de validación con el 20% de los datos y un dataset de testeo con el  10% restante.
 
 ## Descripción del Proyecto
 
