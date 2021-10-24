@@ -1,3 +1,5 @@
+![IronHack Logo](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_d5c5793015fec3be28a63c4fa3dd4d55.png)
+
 # Recurrent Neural Networks for Electricity Price Prediction
 Predicción del precio de la electricidad en el mercado eléctrico español utilizando series temporales y redes neuronales recurrentes.
 
