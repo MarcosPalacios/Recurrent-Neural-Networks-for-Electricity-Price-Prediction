@@ -59,3 +59,5 @@ Los modelos testeados han sido basicamente los 5 siguientes:
 * Encoder Decoder LSTM
 
 La métrica utilizada para su evaluación ha sido el Mean Absolute Error
+
+---
